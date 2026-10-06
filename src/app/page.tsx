@@ -1,69 +1,127 @@
-import Image from "next/image";
+import Hero from "@/components/home/Hero";
+import ServicesSection from "@/components/home/ServicesSection";
+import Mission from "@/components/home/Mission";
+import FeatureSplit from "@/components/home/FeatureSplit";
+import DreamBanner from "@/components/home/DreamBanner";
+import CallCentre from "@/components/home/CallCentre";
+import WorkFlow from "@/components/home/WorkFlow";
+import Clients from "@/components/home/Clients";
+import CtaBand from "@/components/home/CtaBand";
+import {
+  ChoiceArt,
+  GrowthArt,
+  MarketingArt,
+  UxArt,
+} from "@/components/art/Illustrations";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Hero />
+      <ServicesSection />
+      <Mission />
+
+      <FeatureSplit
+        eyebrow="User Experience"
+        title={
+          <>
+            A Better Website Means{" "}
+            <span className="text-gradient">Better User Experience</span>
+          </>
+        }
+        paragraphs={[
+          "A custom website will help increase the reach of your products and services. When your website design is unique and attractive, it helps to promote your business online. You can gain new customers and keep the old ones loyal to you.",
+          "NextClick Corp. ensures that your website stands out from your competitors and helps you gain a solid and loyal customer base.",
+        ]}
+        bullets={[
+          "Mobile-first layouts",
+          "Sub-two-second load times",
+          "Accessible to every visitor",
+          "Conversion-focused journeys",
+        ]}
+        art={<UxArt className="h-auto w-full" />}
+        primary={{ label: "About Us", href: "/about" }}
+        secondary={{ label: "Contact Us", href: "/contact" }}
+      />
+
+      <FeatureSplit
+        eyebrow="Digital Growth"
+        title={
+          <>
+            It is Time to Grow. It is the{" "}
+            <span className="text-gradient">Digital Marketing Era</span>
+          </>
+        }
+        paragraphs={[
+          "Digital marketing aims to provide a strong online presence. In the age where every transaction and business opportunity is found online, it is the magic key to get more customers, increase revenue and take your business to new heights.",
+          "At NextClick Corp., we provide our clients with the best digital marketing strategies to help maximise their businesses and attract more customers.",
+        ]}
+        bullets={[
+          "Search engine optimisation",
+          "Paid search and social",
+          "Content and email campaigns",
+          "Revenue-linked reporting",
+        ]}
+        art={<MarketingArt className="h-auto w-full" />}
+        reverse
+        muted
+        primary={{ label: "About Us", href: "/about" }}
+        secondary={{ label: "Contact Us", href: "/contact" }}
+      />
+
+      <DreamBanner />
+      <CallCentre />
+      <WorkFlow />
+
+      <FeatureSplit
+        eyebrow="Why Us"
+        title={
+          <>
+            What Makes NextClick Corp.{" "}
+            <span className="text-gradient">A Better Choice?</span>
+          </>
+        }
+        paragraphs={[
+          "When it comes to IT solutions, whether website design and development, digital marketing or call centre services, NextClick Corp. comes second to none. Having a team of highly qualified designers, developers and SEOs, who have years of experience under their sleeves, we can assure you to get the optimum results.",
+          "They ensure all the strategies are aligned with your objectives — and that you always know what is being built and why.",
+        ]}
+        bullets={[
+          "Senior engineers, no juniors on the bill",
+          "Fixed scope and transparent pricing",
+          "Weekly demos on a live environment",
+          "You own the code and the accounts",
+        ]}
+        art={<ChoiceArt className="h-auto w-full" />}
+        primary={{ label: "About Us", href: "/about" }}
+        secondary={{ label: "Contact Us", href: "/contact" }}
+      />
+
+      <FeatureSplit
+        eyebrow="Results"
+        title={
+          <>
+            Growth We Have <span className="text-gradient">Driven</span>
+          </>
+        }
+        paragraphs={[
+          "We are one of the leading companies in the market, offering reliable and efficient services tailored according to the needs of our clients. Having years of experience in this field, over time we have earned numerous customers with our efficient and reliable services to their utmost satisfaction.",
+          "Our growth is what we strive for, and we have achieved a 100% success rate so far. Most of our clientele is recurring and from word-of-mouth recommendations — a statement to the quality of websites we develop and other services we provide.",
+        ]}
+        bullets={[
+          "250+ projects delivered",
+          "98% client retention rate",
+          "Average 3.4x return on ad spend",
+          "Support response under 4 hours",
+        ]}
+        art={<GrowthArt className="h-auto w-full" />}
+        reverse
+        muted
+        primary={{ label: "About Us", href: "/about" }}
+        secondary={{ label: "Contact Us", href: "/contact" }}
+      />
+
+      <Clients />
+      <CtaBand />
+    </>
   );
 }
